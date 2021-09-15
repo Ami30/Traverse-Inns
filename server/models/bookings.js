@@ -30,4 +30,5 @@ bookingsSchema.set("toJSON", { virtuals: true });
 
 const model = mongoose.model("bookings", bookingsSchema);
 
+// test commit
 export default model;
