@@ -13,7 +13,7 @@ const debug = debugLib("web-project:server");
  * Get port from environment and store in Express.
  */
 
-const port =  "3001";
+const port = process.env.port|| 3001;
 app.set("port", port);
 
 /**
@@ -80,6 +80,9 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
+if(process.env.NODE_ENV==='production'){
+  app.use(express.static('webapp/build'))
+}
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
