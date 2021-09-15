@@ -32,4 +32,5 @@ const notificationReducer = (state = INITAL_STATE, action) => {
   }
 };
 
+// this is export command
 export default notificationReducer;
